@@ -5,21 +5,12 @@
     <h1 class="site-name">発達サポートnavi</h1>
 
     <!-- 最上部の右サイドボタン（ホーム、ログイン、カート商品、注文履歴）-->
-    <% if user_signed_in? %>
       <ul class="header-menu">
         <li class="header-button"><%= link_to "ホーム", root_path %></li>
-        <li class="header-button"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <li class="header-button"><%= link_to "カート商品", cart_path %></li>
-        <li class="header-button"><%= link_to "注文履歴", ordered_path %></li>
+        <li class="header-button"><%= link_to "ログイン", root_path %></li>
+        <li class="header-button"><%= link_to "カート商品", root_path %></li>
+        <li class="header-button"><%= link_to "注文履歴", root_path %></li>
       </ul>
-    <% else %>
-      <ul class="header-menu">
-        <li class="header-button"><%= link_to "ホーム", root_path %></li>
-        <li class="header-button"><%= link_to "ログイン", login_path %></li>
-        <li class="header-button"><%= link_to "カート商品", cart_path %></li>
-        <li class="header-button"><%= link_to "注文履歴", ordered_path %></li>
-      </ul>
-    <% end %>
 
   </div>
 </header>

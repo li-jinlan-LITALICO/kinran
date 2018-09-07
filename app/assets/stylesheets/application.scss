@@ -14,9 +14,6 @@
  *= require_self
  */
 
- // @import "bootstrap-sprockets";
- @import "bootstrap";
-
  /* ページ全体初期設定 */
  *{
    list-style: none;
@@ -50,9 +47,9 @@
  /* 最上部のロゴ */
  .site-name{
    float: left;
-   width: 400px;
-   height: 40px;
-   padding-top: 12px;
+   width: 300px;
+   height: 68px;
+   /* padding-top: 7px; */
  }
 
  /* 最上部の会員登録・ログイン */
@@ -64,14 +61,14 @@
  .header-button{
    float: left;
    width: 96px;
-   height: 78px;
+   height: 60px;
    padding: 10px;
    border: 1px solid #eee;
  }
 
  .header-button > a {
-   width: 75px;
-   height: 30px;
+   width: 96px;
+   height: 18px;
    padding: 21px 0;
    color: #333;
    font-size: 12px;
@@ -99,7 +96,7 @@
  /* フッターのリンクメニュー */
  .footer-container{
    width: cover;
-   height: 200px;
+   height: 160px;
    padding: 20px;
    background-color: #243B0B;
    border-top: 5px solid green;
