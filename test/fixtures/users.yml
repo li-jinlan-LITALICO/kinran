@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: 'likinran'
-  email: 'likinran@gmail.com'
-  postal-code: 3330034
-  address: '埼玉県川口市並木3丁目'
-  phone-number: 0478888888
+user_1:
+  name: likinran
+  email: likinran@gmail.com
+  postal_code: 3330034
+  address: 埼玉県川口市並木3丁目
+  phone_number: 0478888888
+  password_digest: <%= User.digest('password') %>
 
 # two:
 #   name: MyString

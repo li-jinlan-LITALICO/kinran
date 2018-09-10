@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 'goods_1'
-  picture: 'picture_1.png'
+  name: goods_1
+  picture: picture_1.png
   per_cost: 1000
-  description: '1歳児向けのお絵かき玩具です。'
+  description: 1歳児向けのお絵かき玩具です。
   stock_number: 100
 
 # two:
