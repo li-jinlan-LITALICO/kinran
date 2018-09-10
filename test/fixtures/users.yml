@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: likinran
+  email: likinran@gmail.com
+  postal-code: 3330034
+  address: 埼玉県川口市並木3丁目
+  phone-number: 0478888888
+
+# two:
+#   name: MyString
+#   email: MyString
+#   postal-code: 1
+#   address: MyString
+#   phone-number: 1
