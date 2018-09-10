@@ -1,2 +1,22 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<% provide(:title, "ホーム") %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @item.name %>
+        <%= gravatar_for @item %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @item.name %>
+        <%= gravatar_for @item %>
+      </h1>
+    </section>
+  </aside>
+</div>

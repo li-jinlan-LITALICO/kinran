@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/login',   to: 'sessions#create'
 
+  get '/logout',  to: 'sessions#destroy' #いらないのでは
+
   delete '/logout',  to: 'sessions#destroy'
 
   post '/tags',   to: 'tags#create'
