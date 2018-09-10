@@ -1,15 +1,21 @@
 <% provide(:title, @item.name) %>
 
 <div class="row">
-  <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @item.name %>
         <%= gravatar_for @item %>
-        <%= @item.per_cost %>
-        <%= @item.description %>
-        <%= @item.stock_number %>
+      </h1>
+      <h1>
+        商品名: <%= @item.name %>
+      </h1>
+      <h1>
+        商品単価: <%= @item.per_cost %>
+      </h1>
+      <h1>
+        在庫数: <%= @item.stock_number %>
+      </h1>
+      <h1>
+        商品詳細: <%= @item.description %>
       </h1>
     </section>
-  </aside>
 </div>
