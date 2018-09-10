@@ -23,6 +23,7 @@ gem 'bcrypt',         '3.1.12'
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'faker',          '1.7.3' #実際にいそうなユーザー名を作成するgem
 end
 
 group :development do
