@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tags/create'
+
   get 'items/index'
 
   get 'users/new'
