@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
+
   root 'items#index'
 
-  get '/cart',   to: 'cart_items#index'
+  get 'sessions/new'
 
-  get '/login',   to: 'users#login'
+  get '/login',   to: 'sessions#new'
 
-  post '/login',   to: 'users#login'
+  post '/login',   to: 'sessions#create'
+
+  delete '/logout',  to: 'sessions#destroy'
 
   post '/tags',   to: 'tags#create'
+
+  get '/cart',   to: 'cart_items#index'
 
   resources :items
   resources :tags
