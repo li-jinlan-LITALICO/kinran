@@ -7,14 +7,12 @@ Rails.application.routes.draw do
   # 無くて良い機能
   get '/signup',   to: 'users#new'
 
-  # 無くて良い機能  
+  # 無くて良い機能
   post '/signup',  to: 'users#create'
 
   get '/login',   to: 'sessions#new'
 
   post '/login',   to: 'sessions#create'
-
-  get '/logout',  to: 'sessions#destroy' #いらないのでは
 
   delete '/logout',  to: 'sessions#destroy'
 
