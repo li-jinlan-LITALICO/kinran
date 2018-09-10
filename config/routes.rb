@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'items#index'
 
-  get 'cart_items/index'
+  get '/cart',   to: 'cart_items#index'
 
-  get 'tags/create'
+  get '/login',   to: 'users#login'
 
-  get 'items/index'
+  post '/login',   to: 'users#login'
 
-  get 'users/new'
+  post '/tags',   to: 'tags#create'
 
   resources :items
-  resources :tags  
+  resources :tags
   resources :users
   # get  '/help',    to: 'static_pages#help', as: 'helf'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
