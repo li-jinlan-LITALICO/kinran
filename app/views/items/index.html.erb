@@ -4,7 +4,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @item.name %>
+        <%= link_to @item.name, tag_path(tag) %>
         <%= gravatar_for @item %>
       </h1>
     </section>
@@ -14,7 +14,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @item.name %>
+        <%= link_to @item.name, tag_path(tag) %>
         <%= gravatar_for @item %>
       </h1>
     </section>
