@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
   get 'users/new'
 
   root 'home#index'
