@@ -129,18 +129,32 @@
  }
  /* ここまで商品詳細ページ */
 
+
+ /* 新規登録ページ */
+ input, textarea, select, .uneditable-input {
+   border: 1px solid #bbb;
+   width: 100%;
+   margin-bottom: 15px;
+
+   input {
+     height: auto !important;
+   }
+
+ }
+ /* ここまで新規登録ページ */
+
  /* ログインページ */
- // input, textarea, select, .uneditable-input {
- //   border: 1px solid #bbb;
- //   width: 100%;
- //   margin-bottom: 15px;
- //   @include box_sizing;
- // }
+ input, textarea, select, .uneditable-input {
+   border: 1px solid #bbb;
+   width: 100%;
+   margin-bottom: 15px;
+ }
 
  input {
    height: auto !important;
  }
 
+ /* エラーメッセージ */
  #error_explanation {
    color: red;
    ul {
@@ -155,6 +169,7 @@
      color: $state-danger-text;
    }
  }
+ /* ここまでエラーメッセージ */
  /* ここまでログインページ */
 
  /* デバッグのレイアウト */
