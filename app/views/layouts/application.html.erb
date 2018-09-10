@@ -19,6 +19,7 @@
     <!-- メイン -->
     <main class="main-container">
       <%= yield %> <!-- 各コントローラーのhtml.erbのテンプレートを挿入する -->
+      <%= debug(params) if Rails.env.development? %>
     </main>
 
     <!-- フッター -->
