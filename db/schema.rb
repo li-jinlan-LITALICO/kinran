@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180910061328) do
+ActiveRecord::Schema.define(version: 20180911083027) do
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20180910061328) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name", unique: true
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "shipped_user_name"
+    t.string "shipped_postal_code"
+    t.string "shipped_address"
+    t.string "shipped_phone_number"
+    t.integer "billing_amount"
+    t.string "ordered_digest"
+    t.datetime "ordered_at"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "ordered_at"], name: "index_orders_on_user_id_and_ordered_at"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,4 +57,5 @@ ActiveRecord::Schema.define(version: 20180910061328) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "orders", "users"
 end
