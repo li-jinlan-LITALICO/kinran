@@ -53,6 +53,13 @@ class OrderTest < ActiveSupport::TestCase
     assert_not @order.valid?
   end
 
+  test "ordered_digest should be unique" do
+    duplicate_order = @order.dup
+    duplicate_order.ordered_digest = @order.ordered_digest.upcase
+    @order.save
+    assert_not duplicate_order.valid?
+  end
+
   test "ordered_at should be present" do
     @order.ordered_at = "   "
     assert_not @order.valid?
