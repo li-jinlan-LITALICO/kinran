@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180910061328) do
     t.string "name"
     t.string "picture"
     t.integer "per_cost"
-    t.string "description"
+    t.text "description"
     t.integer "stock_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20180910061328) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
-    t.integer "postal_code"
+    t.string "postal_code"
     t.string "address"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
