@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  # has_many : tag_items　dependent: :destroy
-  # has_many : cart_items　dependent: :destroy
+  # has_many :tag_items dependent: :destroy
+  # has_many : cart_items dependent: :destroy
   # has_many : order_items
   validates :name,  presence: true, uniqueness: { case_sensitive: false }
   validates :picture, presence: true

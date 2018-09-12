@@ -4,7 +4,6 @@ class OrderTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:user_1)
-    # このコードは慣習的に正しくない
     @order = Order.new(shipped_user_name: 'likinran', user_id: @user.id, shipped_postal_code: '332-0034',shipped_address: '東京都品川区3-3-1',shipped_phone_number: '03-3498-1283',
                        billing_amount: 100000, ordered_digest: "$2a$10$KPpxuDFqTun8PTSEgVCIWOAgCD1EOD3AsjtIeYKhl8WY1lh9TI8nq", ordered_at: '2018-09-11 17:30:27')
   end
