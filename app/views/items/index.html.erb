@@ -1,22 +1,15 @@
 <% provide(:title, "ホーム") %>
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= link_to @item.name, tag_path(tag) %>
-        <%= gravatar_for @item %>
-      </h1>
-    </section>
-  </aside>
-</div>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= link_to @item.name, tag_path(tag) %>
-        <%= gravatar_for @item %>
-      </h1>
-    </section>
-  </aside>
+<h1>All items</h1>
+
+  <% @items.each do |item| %>
+    <ul class="items">
+      <li>
+        <%= gravatar_for item, size: 200 %>
+        <%= link_to item.name, item %>
+      </li>
+    </ul>
+  <% end %>
+<div>
+  <%= will_paginate %>
 </div>

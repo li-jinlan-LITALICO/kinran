@@ -17,13 +17,15 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
+gem 'will_paginate','3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # login
 gem 'bcrypt',         '3.1.12'
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
-  gem 'faker',          '1.7.3' #実際にいそうなユーザー名を作成するgem
+  gem 'faker',   '1.7.3'
 end
 
 group :development do
@@ -41,5 +43,4 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 
-# Windows環境ではtzinfo-dataというgemを含める必要があります
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

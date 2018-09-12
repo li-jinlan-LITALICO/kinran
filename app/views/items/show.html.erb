@@ -6,13 +6,25 @@
         <%= gravatar_for @item %>
       </h1>
       <h1>
-        商品名: <%= @item.name %>
+        <%= @item.name %>
       </h1>
       <h1>
-        商品単価: <%= @item.per_cost %>
+        税抜き価格 ¥<%= @item.per_cost %>
       </h1>
+      <h3>
+        配送料一律 ¥300
+      </h3>
       <h1>
         在庫数: <%= @item.stock_number %>
+      </h1>
+      <h1>
+        数量:
+      </h1>
+      <h1>
+        ボタン「カートに入れる」
+      </h1>
+      <h1>
+        タグ1 タグ2 タグ3
       </h1>
       <h1>
         商品詳細: <%= @item.description %>
