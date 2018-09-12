@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   # has_many :order_items dependent: :destroy
+  default_scope -> { order(ordered_at: :desc) }
   validates :user_id, presence: true
   validates :shipped_user_name,  presence: true
   validates :shipped_postal_code,  presence: true

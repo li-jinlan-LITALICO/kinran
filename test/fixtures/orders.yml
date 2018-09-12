@@ -6,16 +6,36 @@ one:
   shipped_address: 東京都品川区3-3-1
   shipped_phone_number: 03-3498-1283
   billing_amount: 100000
-  ordered_digest: <%= User.digest('ordered_number') %>
-  ordered_at: 2018-09-11 17:30:27
+  ordered_digest: <%= User.digest('ordered_number_1') %>
+  ordered_at: 2018-09-09 02:21:59
   user: user_1
 
-# two:
-#   shipped_user_name: MyString
-#   shipped_postal_code: MyString
-#   shipped_address: MyString
-#   shipped_phone_number: MyString
-#   billing_amount: 1
-#   ordered_digest: MyString
-#   ordered_at: 2018-09-11 17:30:27
-#   user: two
+two:
+  shipped_user_name: likinran
+  shipped_postal_code: 332-0034
+  shipped_address: 東京都品川区3-3-1
+  shipped_phone_number: 03-3498-1283
+  billing_amount: 100000
+  ordered_digest: <%= User.digest('ordered_number_2') %>
+  ordered_at: 2018-09-10 02:21:59
+  user: user_2
+
+three:
+  shipped_user_name: likinran
+  shipped_postal_code: 332-0034
+  shipped_address: 東京都品川区3-3-1
+  shipped_phone_number: 03-3498-1283
+  billing_amount: 100000
+  ordered_digest: <%= User.digest('ordered_number_3') %>
+  ordered_at: 2018-09-11 02:21:59
+  user: user_3
+
+most_recent:
+  shipped_user_name: likinran
+  shipped_postal_code: 332-0034
+  shipped_address: 東京都品川区3-3-1
+  shipped_phone_number: 03-3498-1283
+  billing_amount: 100000
+  ordered_digest: <%= User.digest('ordered_number_4') %>
+  ordered_at: 2018-09-12 02:21:59
+  user: user_4

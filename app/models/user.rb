@@ -15,7 +15,6 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, numericality: { only_integer: true },
                           length: { minimum: 9 }
 
-  # 渡された文字列のハッシュ値を返す
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
