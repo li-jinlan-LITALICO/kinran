@@ -4,13 +4,13 @@
   商品一覧
 </h1>
 
-<div class="list_items">
+<div class="list-items">
   <% @items.each do |item| %>
-    <ul class="list_item">
-      <li class="list_item__image"><%= image_tag '商品-64.jpg' %></li>
-      <li class="list_item__name"><%= link_to item.name, item %><li>
-      <li class="list_item__per_cost">価格: <%= item.per_cost %>円<li>
-      <li class="list_item__stock_number">在庫数：<%= item.stock_number %><li>
+    <ul class="list-item">
+      <li class="list-item__image"><%= image_tag '商品-64.jpg' %></li>
+      <li class="list-item__name"><%= link_to item.name, item %><li>
+      <li class="list-item__per_cost">価格: <%= item.per_cost %>円<li>
+      <li class="list-item__stock_number">在庫数：<%= item.stock_number %><li>
     </ul>
   <% end %>
 </div>

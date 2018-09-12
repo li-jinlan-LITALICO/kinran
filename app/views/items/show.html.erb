@@ -1,33 +1,26 @@
 <% provide(:title, @item.name) %>
 
-<div class="row">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @item %>
-      </h1>
-      <h1>
-        <%= @item.name %>
-      </h1>
-      <h1>
-        税抜き価格 ¥<%= @item.per_cost %>
-      </h1>
-      <h3>
-        配送料一律 ¥300
-      </h3>
-      <h1>
-        在庫数: <%= @item.stock_number %>
-      </h1>
-      <h1>
-        数量:
-      </h1>
-      <h1>
-        ボタン「カートに入れる」
-      </h1>
-      <h1>
-        タグ1 タグ2 タグ3
-      </h1>
-      <h1>
-        商品詳細: <%= @item.description %>
-      </h1>
-    </section>
-</div>
+<section class="item-info-main">
+    <div class="item-image"><%= image_tag '商品-64.jpg' %></div>
+    <div class="item-about">
+        <div class="item-about__name"><%= @item.name %></div>
+        <div class="item-about__price">価格   ¥<%= @item.per_cost %></div>
+        <div class="item-about__send-cost">配送料一律 ¥300</div>
+        <div class="item-about__stock-number">在庫数: <%= @item.stock_number %></div>
+        <div class="item-about__purchase-number">
+            <div class="item-about__purchase-number__text">数量: </div>
+            <select name="数量">
+                <% @item.stock_number.times do |n| %>
+                    <option value="#{n + 1}"><%= n + 1 %></option>
+                <% end %>
+            </select>
+        </div>
+        <input class="item-about__add-cart" type="button" value="カートに入れる">
+        <div class="item-about__tags">タグ1, タグ2, タグ3</div>
+    </div>
+</section>
+
+<section class="item-info-more">
+    <div class="item-info-more__heading">商品詳細</div>
+    <div class="item-info-more__description"> <%= @item.description %></div>
+</section>

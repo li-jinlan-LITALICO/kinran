@@ -93,45 +93,102 @@
  }
 
  /* 商品詳細ページ */
- aside {
-   section.user_info {
-     margin-top: 20px;
-   }
-   section {
-     padding: 10px 0;
-     margin-top: 20px;
-     &:first-child {
-       border: 0;
-       padding-top: 0;
-     }
-     span {
-       display: block;
-       margin-bottom: 3px;
-       line-height: 1;
-     }
-     h1 {
-       font-size: 1.4em;
-       text-align: left;
-       letter-spacing: -1px;
-       margin-bottom: 3px;
-       margin-top: 0px;
-     }
-   }
- }
+  .item-info-main {
+    width: 1000px;
+    height: 400px;
+    margin: 50px 0;
+  }
 
- .gravatar {
-   float: left;
-   margin-right: 10px;
- }
+  .item-image{
+    float: left;
+    width: 400px;
+    height: 400px;
 
- .gravatar_edit {
-   margin-top: 15px;
- }
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  .item-about {
+    float: left;
+    width: 500px;
+    height: 400px;
+    padding: 20px 0 10px 100px;
+  }
+
+  .item-about__name {
+    height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .item-about__price {
+    height: 30px;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .item-about__send-cost,.item-about__stock-number {
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .item-about__purchase-number{
+    height: 30px;
+    margin-bottom: 10px;
+
+    .item-about__purchase-number__text {
+      font-size: 15px;
+      float: left;
+      margin-right: 20px;
+    }
+    select{
+      width: 100px;
+      float: left;
+    }
+  }
+
+  .item-about__add-cart{
+    width: 300px;
+    height: 80px;
+    background-color: #FFBF00;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 8px;
+    margin: 10px 0 20px 0;
+    border-color: #FFBF00;
+    border-radius: 5px;
+  }
+
+  .item-about__tags{
+    height: 50px;
+  }
+
+  .item-info-more {
+    height: 300px;
+  }
+
+  .item-info-more__heading {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+  }
+
+  .item-info-more__description {
+    height: 200px;
+  }
  /* ここまで商品詳細ページ */
 
  /* ここから商品一覧ページ */
 
-  .list_items, .paging {
+  .list-items, .paging {
     text-align: center;
   }
 
@@ -143,18 +200,20 @@
     border-bottom: 1px solid #eee;
   }
 
-  .list_item{
+  .list-item{
     width: 200px;
     height: 300PX;
     margin: 10px 30px 10px 0;
   }
 
-  .list_item__image, img{
-    width: 200px;
-    height: 200px;
+  .list-item__image {
+    img{
+      width: 200px;
+      height: 200px;
+    }
   }
 
-  .list_item__name{
+  .list-item__name{
     width: 200px;
     height: 30px;
     font-size: 18px;
@@ -162,7 +221,7 @@
     margin-bottom: 5px;
   }
 
-  .list_item__per_cost,.list_item__stock_number{
+  .list-item__per_cost,.list_item__stock_number{
     width: 200px;
     height: 20px;
     font-size: 13px;
