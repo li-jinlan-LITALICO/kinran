@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  # has_many :cart_items dependent: :destroy
+  has_many :cart_items, dependent: :destroy
+  has_many :item_ids, through: :cart_items
   has_many :orders
   before_save { self.email = email.downcase }
   validates :name,  presence: true, length: { maximum: 50 }

@@ -4,6 +4,7 @@ class TagTest < ActiveSupport::TestCase
 
   def setup
     @tag = Tag.new(name: 'aaa')
+    @item = Item.new(name: 'goods_1', picture: 'picture_1.png', per_cost: 1000, description: '1歳児向けのお絵かき玩具です。' , stock_number: 100)
   end
 
   test "tag name should be present" do
@@ -22,4 +23,14 @@ class TagTest < ActiveSupport::TestCase
     @tag.name = ""
     assert_not @tag.valid?
   end
+
+  test "associated tag_relationships should be destroyed" do
+    @tag.save
+    @item.save
+    TagRelationship.create!(relative_item_id: @item.id, relative_tag_id: @tag.id)
+    assert_difference 'TagRelationship.count', -1 do
+      @tag.destroy
+    end
+  end
+  
 end

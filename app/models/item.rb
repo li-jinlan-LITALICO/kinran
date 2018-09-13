@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
-  # has_many :cart_items dependent: :destroy
   # has_many :order_items
   has_many :tag_relationships, foreign_key: "relative_item_id",
                                 dependent:  :destroy
   has_many :relative_tags, through: :tag_relationships
+  has_many :cart_items, dependent: :destroy
   validates :name,  presence: true, uniqueness: { case_sensitive: false }
   validates :picture, presence: true
   validates :per_cost, presence: true, numericality: { greater_than: 99 }
