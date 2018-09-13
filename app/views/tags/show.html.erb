@@ -1,20 +1,16 @@
 <% provide(:title, @tag.name) %>
 
 <h1 class='heading'>
-  <%= @tag.name %>
+  <%= @tag.name %>の関連商品
 </h1>
 
-<div class="list_items">
-  <% @items.each do |item| %>
-    <ul class="list_item">
-      <li class="list_item__image"><%= gravatar_for item, size: 200 %></li>
-      <li class="list_item__name"><%= link_to item.name, item, class: :list_item__name %><li>
-      <li class="list_item__per_cost">価格: <%= item.per_cost %>円<li>
-      <li class="list_item__stock_number">在庫数：<%= item.stock_number %><li>
+<div class="list-items">
+  <% @relative_items.each do |item| %>
+    <ul class="list-item">
+      <li class="list-item__image"><%= image_tag '商品-64.jpg' %></li>
+      <li class="list-item__name"><%= link_to item.name, item %><li>
+      <li class="list-item__per_cost">価格: <%= item.per_cost %>円<li>
+      <li class="list-item__stock_number">在庫数：<%= item.stock_number %><li>
     </ul>
   <% end %>
-</div>
-
-
-<div class="paging">
 </div>

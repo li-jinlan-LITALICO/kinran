@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911083027) do
+ActiveRecord::Schema.define(version: 20180913041625) do
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20180911083027) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "ordered_at"], name: "index_orders_on_user_id_and_ordered_at"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "tag_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "relative_item_id"
+    t.integer "relative_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relative_item_id", "relative_tag_id"], name: "index_tag_relationships_on_relative_item_id_and_relative_tag_id", unique: true
+    t.index ["relative_item_id"], name: "index_tag_relationships_on_relative_item_id"
+    t.index ["relative_tag_id"], name: "index_tag_relationships_on_relative_tag_id"
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
