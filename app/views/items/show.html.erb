@@ -16,7 +16,13 @@
             </select>
         </div>
         <input class="item-about__add-cart" type="button" value="カートに入れる">
-        <div class="item-about__tags">タグ1, タグ2, タグ3</div>
+        <div class="item-about__tags">
+          <% @relative_tags.each do |tag| %>
+              <div class="item-about__tag">
+                  <%= link_to tag.name, relative_items_tag_path(tag) %>
+              </div>
+          <% end %>
+        </div>
     </div>
 </section>
 

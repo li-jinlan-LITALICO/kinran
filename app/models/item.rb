@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   # has_many :order_items
   has_many :tag_relationships, foreign_key: "relative_item_id",
                                 dependent:  :destroy
-  has_many :following, through: :tag_relationships, source: :relative_tag
+  has_many :relative_tags, through: :tag_relationships
   validates :name,  presence: true, uniqueness: { case_sensitive: false }
   validates :picture, presence: true
   validates :per_cost, presence: true, numericality: { greater_than: 99 }
@@ -13,7 +13,7 @@ class Item < ApplicationRecord
 
   #商品をタグ付ける
   def follow(tag)
-    following << tag
+    relative_tags << tag
   end
 
   #商品をタグ付けない
@@ -23,6 +23,6 @@ class Item < ApplicationRecord
 
   #商品にタグ付けされていたらtrueを返す
   def following?(tag)
-    following.include?(tag)
+    relative_tags.include?(tag)
   end
 end

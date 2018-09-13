@@ -57,5 +57,5 @@ tags = Tag.all
 tag = tags.first
 following = tags[1..5]
 followers = items[1..30]
-following.each { |t| item.follow(t) } #1~5のタグにはid1の商品が紐づいている
-followers.each { |i| i.follow(tag) } #di1~30の商品はid1のタグに紐づいている
+following.each { |t| item.follow(t) } #2~6のタグにはid1の商品が紐づいている
+followers.each { |i| i.follow(tag) } #id2~31の商品はid1のタグに紐づいている
