@@ -11,6 +11,13 @@
       <li class="list-item__name"><%= link_to item.name, item %></li>
       <li class="list-item__per_cost">価格: <%= item.per_cost %>円</li>
       <li class="list-item__stock_number">在庫数：<%= item.stock_number %></li>
+      <li class="list-item__tags">
+        <% item.relative_tags.each do |relative_tag| %>
+            <div class="list-item__tag">
+                <%= link_to relative_tag.name, relative_items_tag_path(relative_tag) %>
+            </div>
+        <% end %>
+      </li>
     </ul>
   <% end %>
 </div>
