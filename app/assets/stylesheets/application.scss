@@ -187,11 +187,6 @@
  /* ここまで商品詳細ページ */
 
  /* ここから商品一覧ページ */
-
-  .list-items, .paging {
-    text-align: center;
-  }
-
   .heading{
     width: 1000px;
     font-size: 22px;
@@ -221,14 +216,16 @@
     margin-bottom: 5px;
   }
 
-  .list-item__per_cost,.list_item__stock_number{
+  .list-item__per_cost, .list-item__stock_number {
     width: 200px;
     height: 20px;
     font-size: 13px;
     font-weight: 500;
     text-align: center;
   }
-
+  .pagination {
+    margin-left: 110px;
+  }
  /* ここまで商品一覧ページ */
 
  /* 新規登録ページ */
