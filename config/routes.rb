@@ -27,6 +27,12 @@ Rails.application.routes.draw do
   end
 
   resources :items
-  resources :users
-  # get  '/help',    to: 'static_pages#help', as: 'helf'
+
+  resources :users do
+    member do
+      get :add_cart_items
+      post :add_cart_items
+    end
+  end
+
 end

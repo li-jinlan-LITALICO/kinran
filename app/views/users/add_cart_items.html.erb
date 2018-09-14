@@ -1,0 +1,59 @@
+<% provide(:title, "カート商品") %>
+
+<h1 class='cart-heading'>
+  ショッピングカート
+</h1>
+
+<section class="cart-items">
+  <div class="cart-items__heading">
+    <div class="cart-items__heading-list-1">商品</div>
+    <div class="cart-items__heading-list-2">価格</div>
+    <div class="cart-items__heading-list-3">数量</div>
+  </div>
+  <div class="cart-items__list">
+    <% @user.add_cart_items.each do |add_cart_item| %>
+      <div class="cart-items__item">
+        <div class="cart-items__item-picture"><%= image_tag '商品-64.jpg' %></div>
+        <div class="cart-items__item-info">
+          <div class="cart-items__item-name"><%= link_to add_cart_item.name, add_cart_item %></div>
+          <div class="cart-items__item-stock-number">在庫数：<%= add_cart_item.stock_number %></div>
+          <div class="cart-items__item-tags">
+            <% add_cart_item.relative_tags.each do |relative_tag| %>
+                <div class="list-item__tag">
+                    <%= link_to relative_tag.name, relative_items_tag_path(relative_tag) %>
+                </div>
+            <% end %>
+          </div>
+          <div class="cart-items__item-delete-button">
+            <input type="button" value="削除">
+          </div>
+        </div>
+        <div class="cart-items__item-price"><%= add_cart_item.per_cost %>円</div>
+        <div class="cart-items__item-number">
+          <select name="数量">
+            <% add_cart_item.stock_number.times do |n| %>
+                <option value="#{n + 1}"><%= n + 1 %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="order">
+  <h3 class="order__total-fee">合計<%= @user.cart_items.count %>点：円</h3>
+  <input class="item-about__add-cart" type="button" value="注文を確定する">
+</section>
+
+<section class="shipping">
+  <div class="shipping-heading">お届け先情報</div>
+  <div class="shipping-info"><%= @user.name %>  様</div>
+  <div class="shipping-info">郵便番号： <%= @user.postal_code %></div>
+  <div class="shipping-info">お届け住所： <%= @user.address %></div>
+</section>
+
+<section class="shipping">
+  <div class="shipping-heading">お支払い方法</div>
+  <div class="shipping-info">代金引換のみご利用いただけます。手数料は一律150円です。</div>
+</section>

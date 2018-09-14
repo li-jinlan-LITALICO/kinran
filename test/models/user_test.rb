@@ -84,7 +84,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "should relate a tag and a item" do
     assert_not @user.add_cart_item?(@item)
-    @user.add_cart_item(@item)
+    @user.add_cart_item(@item, 1)
     assert @user.add_cart_item?(@item)
     assert @item.add_cart_users.include?(@user)
     @user.destroy_cart_item(@item)

@@ -61,9 +61,9 @@ following.each { |t| item.follow(t) } #2~6のタグにはid1の商品が紐づ�
 followers.each { |i| i.follow(tag) } #id2~31の商品はid1のタグに紐づいている
 
 # カートの商品データ
-10.times do |n|
+ 2.times do |n|
   cart_item_number  = n + 1
-  user_id = n + 1
+  user_id = 1
   item_id = n + 1
   CartItem.create!(cart_item_number: cart_item_number,
                    user_id:                   user_id,

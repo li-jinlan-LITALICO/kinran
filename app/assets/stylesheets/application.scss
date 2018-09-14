@@ -269,6 +269,151 @@
  }
  /* ここまで新規登録ページ */
 
+ /* ここからカートページ */
+ .cart-heading{
+   width: 1000px;
+   font-size: 22px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+ }
+
+ .cart-items {
+   width: 950px;
+   border-bottom: 2px dashed #eee;
+   padding-bottom: 30px;
+   margin-bottom: 50px;
+ }
+
+ .cart-items__heading {
+  border-bottom: 2px dashed #eee;
+  width: 950px;
+  height: 50px;
+  padding-top: 18px;
+  margin-bottom: 30px;
+ }
+
+ .cart-items__heading-list-1 {
+   float: left;
+   font-size: 18px;
+   margin-left: 50px;
+   margin-right: 500px;
+ }
+
+ .cart-items__heading-list-2 {
+   float: left;
+   font-size: 18px;
+   margin-right: 130px;
+ }
+
+ .cart-items__heading-list-3 {
+   float: left;
+   font-size: 18px;
+   margin-right: 100px;
+ }
+
+ .cart-items__item {
+   padding: 10px 30px;
+   height: 180px;
+ }
+
+ .cart-items__item-picture {
+   height: 160px;
+   width: 200px;
+   padding-right: 20px;
+   float: left;
+
+   img {
+     height: 160px;
+     width: 180px;
+   }
+ }
+
+ .cart-items__item-info {
+   height: 160px;
+   width: 350px;
+   float: left;
+
+   .cart-items__item-name {
+     font-size: 20px;
+     height: 40px;
+     padding: 5px 0 5px 10px;
+   }
+
+   .cart-items__item-stock-number {
+     height: 40px;
+     font-size: 15px;
+     padding: 5px 0 5px 10px;
+   }
+
+   .cart-items__item-tags {
+     height: 40px;
+     padding: 5px 0 5px 10px;
+   }
+
+   .cart-items__item-delete-button {
+     height: 40px;
+     padding: 5px 0 5px 10px;
+
+     input {
+       width: 75px;
+       font-size: 15px;
+       border-radius: 5px;
+       background-color: rgb(248, 248, 248);
+     }
+   }
+ }
+
+ .cart-items__item-price{
+   height: 160px;
+   width: 160px;
+   float: left;
+   font-size: 18px;
+   padding-top: 9px;
+ }
+
+ .cart-items__item-number{
+  height: 160px;
+  width: 160px;
+  float: left;
+  padding-top: 9px;
+
+  select {
+    width: 100px;
+  }
+ }
+
+ .order {
+   width: 950px;
+   padding-left: 580px;
+
+   .order__total-fee {
+     font-size: 22px;
+     margin-top: 5px;
+     margin-bottom: 20px;
+   }
+ }
+
+ .shipping {
+   height: 200px;
+   width: 950px;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   padding: 10px 0 10px 10px;
+ }
+
+ .shipping-heading {
+   height: 35px;
+   font-size: 22px;
+   border-bottom: 1px solid #eee;
+   margin-bottom: 20px;
+ }
+
+ .shipping-info {
+   font-size: 15px;
+   margin-bottom: 10px;
+ }
+ /* ここまでカートページ */
+
  /* ログインページ */
  input, textarea, select, .uneditable-input {
    border: 1px solid #bbb;

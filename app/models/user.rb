@@ -22,17 +22,14 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
-  # カートに商品を追加する
   def add_cart_item(item, cart_item_number)
     cart_items.create!(cart_item_number: cart_item_number, user_id: self.id, item_id: item.id)
   end
 
-  # カートの商品を取り消す
   def destroy_cart_item(item)
     cart_items.find_by(item_id: item.id).destroy!
   end
 
-  # 現在の商品をカートに追加していたらtrueを返す
   def add_cart_item?(item)
     add_cart_items.include?(item)
   end
