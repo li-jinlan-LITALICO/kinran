@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :cart_items, dependent: :destroy
-  has_many :item_ids, through: :cart_items
+  has_many :add_cart_items, through: :cart_items, source: :item
   has_many :orders
   before_save { self.email = email.downcase }
   validates :name,  presence: true, length: { maximum: 50 }
@@ -20,6 +20,21 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  # カートに商品を追加する
+  def add_cart_item(item)
+    add_cart_items << item
+  end
+
+  # カートの商品を取り消す
+  def destroy_cart_item(item)
+    cart_items.find_by(item_id: item.id).destroy
+  end
+
+  # 現在の商品をカートに追加していたらtrueを返す
+  def add_cart_item?(item)
+    add_cart_items.include?(item)
   end
 
 end

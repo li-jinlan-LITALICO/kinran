@@ -4,6 +4,7 @@ class Item < ApplicationRecord
                                 dependent:  :destroy
   has_many :relative_tags, through: :tag_relationships
   has_many :cart_items, dependent: :destroy
+  has_many :add_cart_users, through: :cart_items, source: :user
   validates :name,  presence: true, uniqueness: { case_sensitive: false }
   validates :picture, presence: true
   validates :per_cost, presence: true, numericality: { greater_than: 99 }
@@ -25,4 +26,5 @@ class Item < ApplicationRecord
   def following?(tag)
     relative_tags.include?(tag)
   end
+
 end

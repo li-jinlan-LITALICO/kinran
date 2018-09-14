@@ -12,6 +12,16 @@ class CartItemTest < ActiveSupport::TestCase
     assert @cart_item.valid?
   end
 
+  test "should require a user_id" do
+    @cart_item.user_id = nil
+    assert_not @cart_item.valid?
+  end
+
+  test "should require a item_id" do
+    @cart_item.item_id = nil
+    assert_not @cart_item.valid?
+  end
+
   test "user id should be present" do
     @cart_item.user_id = nil
     assert_not @cart_item.valid?
