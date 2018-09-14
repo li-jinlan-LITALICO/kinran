@@ -5,7 +5,6 @@ class Tag < ApplicationRecord
   validates :name,  presence: true, uniqueness: { case_sensitive: false },
             length: { minimum: 1 }
 
-  #タグに商品が含まれていたらtrueを返す
   def followed_by?(item)
     relative_items.include?(item)
   end

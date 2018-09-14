@@ -1,4 +1,3 @@
-#ユーザーデータ
 100.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
@@ -15,7 +14,7 @@
                phone_number:      phone_number)
 end
 
-#商品データ
+
 100.times do |n|
   name  = "商品-#{n+1}"
   picture = name + ".png"
@@ -29,7 +28,7 @@ end
                stock_number:      stock_number)
 end
 
-#タグデータ
+
 Tag.create!(name: "すうじ")
 Tag.create!(name: "図形")
 Tag.create!(name: "算数")
@@ -50,17 +49,17 @@ Tag.create!(name: "9歳から")
 Tag.create!(name: "12歳から")
 Tag.create!(name: "15歳以上")
 
-# 商品とタグの関係データ
+
 items = Item.all
 item  = items.first
 tags = Tag.all
 tag = tags.first
 following = tags[1..5]
 followers = items[1..30]
-following.each { |t| item.follow(t) } #2~6のタグにはid1の商品が紐づいている
-followers.each { |i| i.follow(tag) } #id2~31の商品はid1のタグに紐づいている
+following.each { |t| item.follow(t) }
+followers.each { |i| i.follow(tag) }
 
-# カートの商品データ
+
  2.times do |n|
   cart_item_number  = n + 1
   user_id = 1
@@ -68,4 +67,4 @@ followers.each { |i| i.follow(tag) } #id2~31の商品はid1のタグに紐づい
   CartItem.create!(cart_item_number: cart_item_number,
                    user_id:                   user_id,
                    item_id:                   item_id)
-end
+ end

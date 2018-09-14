@@ -7,10 +7,3 @@ user_1:
   address: 埼玉県川口市並木3丁目
   phone_number: 0478888888
   password_digest: <%= User.digest('password') %>
-
-# two:
-#   name: MyString
-#   email: MyString
-#   postal-code: 1
-#   address: MyString
-#   phone-number: 1
