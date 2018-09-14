@@ -6,7 +6,6 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(name: 'kinran', email: 'kinran@gmail.com', postal_code: '3320034', address: '埼玉県川口市並木3丁目', phone_number: '0478888888',
                     password: 'foobar', password_confirmation: 'foobar')
     @item = items(:item_1)
-    @cart_item = @user.cart_items.build(cart_item_number: 1, user_id: @user.id, item_id: @item.id)
   end
 
   test "should be valid" do

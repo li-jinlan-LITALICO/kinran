@@ -59,3 +59,13 @@ following = tags[1..5]
 followers = items[1..30]
 following.each { |t| item.follow(t) } #2~6のタグにはid1の商品が紐づいている
 followers.each { |i| i.follow(tag) } #id2~31の商品はid1のタグに紐づいている
+
+# カートの商品（ユーザーと商品の関係）データ
+items = Item.all
+item  = items.first
+users = User.all
+user = users.first
+add_cart_items = items[1..5]
+add_cart_users = users[1..3]
+add_cart_items.each { |i| user.add_cart_item(i) } #ユーザー1はid1~5の商品をカートに追加している
+add_cart_users.each { |u| u.add_cart_item(item) } #id2~4のユーザーは、id1の商品をカートに追加している
